@@ -38,7 +38,7 @@ var Game = {
         // bounding side, i.e. the ball diameter is:
         // TILE_WIDTH - 2*BALL_MARGIN
         //
-        TILE_WIDTH: 45,
+        TILE_WIDTH: 60,
         BALL_MARGIN: 4,
         BALL_RADIUS: null,   // computed dynamically
 
@@ -48,10 +48,10 @@ var Game = {
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 750,
-        CANVAS_HEIGHT: 500,
+        CANVAS_WIDTH: 900,
+        CANVAS_HEIGHT: 600,
 
-        PREVIEW_TOPLEFT: [500, 40],
+        PREVIEW_TOPLEFT: [620, 40],
         PREVIEW_TILE_WIDTH: 28,
         PREVIEW_BALL_RADIUS: null,  // computed dynamically
     },
