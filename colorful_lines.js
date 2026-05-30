@@ -38,21 +38,21 @@ var Game = {
         // bounding side, i.e. the ball diameter is:
         // TILE_WIDTH - 2*BALL_MARGIN
         //
-        TILE_WIDTH: 50,
-        BALL_MARGIN: 5,
+        TILE_WIDTH: 30,
+        BALL_MARGIN: 3,
         BALL_RADIUS: null,   // computed dynamically
 
-        BOARD_TOPLEFT: [20, 20],
+        BOARD_TOPLEFT: [10, 10],
 
         // these will be computed dynamically
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 750,
-        CANVAS_HEIGHT: 500,
+        CANVAS_WIDTH: 500,
+        CANVAS_HEIGHT: 300,
 
-        PREVIEW_TOPLEFT: [610, 80],
-        PREVIEW_TILE_WIDTH: 30,
+        PREVIEW_TOPLEFT: [380, 25],
+        PREVIEW_TILE_WIDTH: 20,
         PREVIEW_BALL_RADIUS: null,  // computed dynamically
     },
 
@@ -171,35 +171,18 @@ function do_draw() {
     Game.context.fillStyle = 'black';
     Game.context.fillRect(0, 0, Game.Geometry.CANVAS_WIDTH, Game.Geometry.CANVAS_HEIGHT);
 
-    draw_board_background(Game.context, Game.Geometry.BOARD_TOPLEFT,
-        Game.Geometry.MAX_ROWS, Game.Geometry.MAX_COLS,
-        Game.Geometry.TILE_WIDTH);
-
-    foreach_board_cell(function (row, col) {
-        if (Game.board[row][col] !== null) {
-            draw_ball(Game.context, new Coord(row, col), Game.board[row][col]);
-        }
-    });
-
-    draw_preview();
-
-    if (Game.state === Game.State.SELECTED) {
-        draw_selection(Game.context, Game.selected);
-    }
-
     Game.context.fillStyle = 'white';
-    Game.context.font = 'bold 24px sans-serif';
-    Game.context.fillText('Next:', 520, 105);
+    Game.context.font = 'bold 15px sans-serif';
+    Game.context.fillText('Preview:', 300, 40);
 
-    Game.context.fillText('Score:', 520, 165);
-    Game.context.fillText(Game.score.toString(), 610, 165);
+    Game.context.fillText('Score: ', 300, 70);
+    Game.context.fillText(Game.score.toString() + ' ', 380, 70);
 
     if (Game.state === Game.State.GAMEOVER) {
-        Game.context.font = 'bold 28px sans-serif';
+        Game.context.font = 'bold 20px sans-serif';
         Game.context.fillStyle = 'red';
-        Game.context.fillText('Game over!', 520, 230);
+        Game.context.fillText('Game over! ', 330, 120);
     }
-}
 
     draw_board_background(Game.context, Game.Geometry.BOARD_TOPLEFT,
         Game.Geometry.MAX_ROWS, Game.Geometry.MAX_COLS,
