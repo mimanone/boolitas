@@ -48,10 +48,10 @@ var Game = {
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 900,
-        CANVAS_HEIGHT: 650,
+        CANVAS_WIDTH: 1200,
+        CANVAS_HEIGHT: 850,
 
-        PREVIEW_TOPLEFT: [650, 95],
+        PREVIEW_TOPLEFT: [660, 110],
         PREVIEW_TILE_WIDTH: 35,
         PREVIEW_BALL_RADIUS: null,  // computed dynamically
     },
