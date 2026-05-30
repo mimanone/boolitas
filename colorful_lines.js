@@ -48,8 +48,8 @@ var Game = {
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 700,
-        CANVAS_HEIGHT: 430,
+        CANVAS_WIDTH: 900,
+        CANVAS_HEIGHT: 650,
 
         PREVIEW_TOPLEFT: [620, 90],
         PREVIEW_TILE_WIDTH: 28,
