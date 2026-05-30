@@ -38,21 +38,21 @@ var Game = {
         // bounding side, i.e. the ball diameter is:
         // TILE_WIDTH - 2*BALL_MARGIN
         //
-        TILE_WIDTH: 30,
-        BALL_MARGIN: 3,
+        TILE_WIDTH: 45,
+        BALL_MARGIN: 4,
         BALL_RADIUS: null,   // computed dynamically
 
-        BOARD_TOPLEFT: [10, 10],
+        BOARD_TOPLEFT: [20, 20],
 
         // these will be computed dynamically
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 500,
-        CANVAS_HEIGHT: 300,
+        CANVAS_WIDTH: 750,
+        CANVAS_HEIGHT: 500,
 
-        PREVIEW_TOPLEFT: [380, 25],
-        PREVIEW_TILE_WIDTH: 20,
+        PREVIEW_TOPLEFT: [500, 40],
+        PREVIEW_TILE_WIDTH: 28,
         PREVIEW_BALL_RADIUS: null,  // computed dynamically
     },
 
