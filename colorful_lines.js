@@ -173,7 +173,7 @@ function do_draw() {
 
     Game.context.fillStyle = 'white';
     Game.context.font = 'bold 22px sans-serif';
-    Game.context.fillText('Preview:', 660, 90);
+    Game.context.fillText('Prochaines couleurs:', 660, 90);
 
     Game.context.fillText('Score: ', 660, 160);
     Game.context.fillText(Game.score.toString() + ' ', 1060, 160);
