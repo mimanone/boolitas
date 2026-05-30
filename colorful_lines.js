@@ -172,16 +172,16 @@ function do_draw() {
     Game.context.fillRect(0, 0, Game.Geometry.CANVAS_WIDTH, Game.Geometry.CANVAS_HEIGHT);
 
     Game.context.fillStyle = 'white';
-    Game.context.font = 'bold 15px sans-serif';
-    Game.context.fillText('Next:', 620, 60);
+    Game.context.font = 'bold 28px sans-serif';
+    Game.context.fillText('Next:', 650, 70);
 
-    Game.context.fillText('Score: ', 620, 100);
-    Game.context.fillText(Game.score.toString() + ' ', 720, 100);
+    Game.context.fillText('Score: ', 650, 125);
+    Game.context.fillText(Game.score.toString() + ' ', 760, 125);
 
     if (Game.state === Game.State.GAMEOVER) {
-        Game.context.font = 'bold 20px sans-serif';
+        Game.context.font = 'bold 32px sans-serif';
         Game.context.fillStyle = 'red';
-        Game.context.fillText('Game over! ', 620, 150);
+        Game.context.fillText('Game over! ', 650, 180);
     }
 
     draw_board_background(Game.context, Game.Geometry.BOARD_TOPLEFT,
