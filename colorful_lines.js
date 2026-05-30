@@ -38,21 +38,21 @@ var Game = {
         // bounding side, i.e. the ball diameter is:
         // TILE_WIDTH - 2*BALL_MARGIN
         //
-        TILE_WIDTH: 30,
-        BALL_MARGIN: 3,
+        TILE_WIDTH: 45,
+        BALL_MARGIN: 5,
         BALL_RADIUS: null,   // computed dynamically
 
-        BOARD_TOPLEFT: [10, 10],
+        BOARD_TOPLEFT: [20, 30],
 
         // these will be computed dynamically
         BOARD_WIDTH: null,
         BOARD_HEIGHT: null,
 
-        CANVAS_WIDTH: 500,
-        CANVAS_HEIGHT: 300,
+        CANVAS_WIDTH: 700,
+        CANVAS_HEIGHT: 430,
 
-        PREVIEW_TOPLEFT: [380, 25],
-        PREVIEW_TILE_WIDTH: 20,
+        PREVIEW_TOPLEFT: [540, 90],
+        PREVIEW_TILE_WIDTH: 28,
         PREVIEW_BALL_RADIUS: null,  // computed dynamically
     },
 
@@ -172,11 +172,11 @@ function do_draw() {
     Game.context.fillRect(0, 0, Game.Geometry.CANVAS_WIDTH, Game.Geometry.CANVAS_HEIGHT);
 
     Game.context.fillStyle = 'white';
-    Game.context.font = 'bold 15px sans-serif';
-    Game.context.fillText('Preview:', 300, 40);
+    Game.context.font = 'bold 22px sans-serif';
+    Game.context.fillText('Preview:', 520, 70);
 
-    Game.context.fillText('Score: ', 300, 70);
-    Game.context.fillText(Game.score.toString() + ' ', 380, 70);
+    Game.context.fillText('Score: ', 520, 130);
+    Game.context.fillText(Game.score.toString() + ' ', 610, 130);
 
     if (Game.state === Game.State.GAMEOVER) {
         Game.context.font = 'bold 20px sans-serif';
