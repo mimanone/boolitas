@@ -233,11 +233,24 @@ function draw_preview() {
         let center_x = cell_x + Game.Geometry.PREVIEW_BALL_RADIUS + Game.Geometry.BALL_MARGIN;
         let center_y = cell_y + Game.Geometry.PREVIEW_BALL_RADIUS + Game.Geometry.BALL_MARGIN;
 
-        Game.context.fillStyle = Game.preview_colors[i];
+        let img = BALL_IMAGES[Game.preview_colors[i]];
+
+        Game.context.save();
+
         Game.context.beginPath();
         Game.context.arc(center_x, center_y, Game.Geometry.PREVIEW_BALL_RADIUS, 0, Math.PI * 2, true);
         Game.context.closePath();
-        Game.context.fill();
+        Game.context.clip();
+
+        Game.context.drawImage(
+            img,
+            cell_x + Game.Geometry.BALL_MARGIN,
+            cell_y + Game.Geometry.BALL_MARGIN,
+            Game.Geometry.PREVIEW_TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN,
+            Game.Geometry.PREVIEW_TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN
+);
+
+Game.context.restore();
     }
 }
 
