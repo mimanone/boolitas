@@ -185,7 +185,7 @@ function is_canvas_supported() {
 
 
 function do_draw() {
-    Game.context.fillStyle = '#2C1A1D';
+    Game.context.fillStyle = '#800000';
     Game.context.fillRect(0, 0, Game.Geometry.CANVAS_WIDTH, Game.Geometry.CANVAS_HEIGHT);
 
     Game.context.fillStyle = 'white';
