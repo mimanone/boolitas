@@ -175,7 +175,7 @@ function do_draw() {
     Game.context.font = 'bold 22px sans-serif';
     Game.context.fillText('Prochaines couleurs:', 660, 90);
 
-    Game.context.fillText('Score: ', 660, 175);
+    Game.context.fillText('Score: ', 660, 200);
     Game.context.fillText(Game.score.toString() + ' ', 1060, 160);
 
     if (Game.state === Game.State.GAMEOVER) {
