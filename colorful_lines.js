@@ -4,6 +4,23 @@
 // This code is in the public domain.
 'use strict';
 var DEBUG = false;
+var BALL_IMAGES = {
+    blue: new Image(),
+    red: new Image(),
+    lightgreen: new Image(),
+    black: new Image(),
+    yellow: new Image(),
+    purple: new Image(),
+    pink: new Image()
+};
+
+BALL_IMAGES.blue.src = "image_1.jpeg";
+BALL_IMAGES.red.src = "image_2.jpeg";
+BALL_IMAGES.lightgreen.src = "image_3.jpeg";
+BALL_IMAGES.black.src = "image_4.jpeg";
+BALL_IMAGES.yellow.src = "image_5.jpeg";
+BALL_IMAGES.purple.src = "image_6.jpeg";
+BALL_IMAGES.pink.src = "image_7.jpeg";
 
 
 // Global game state and settings
@@ -255,14 +272,31 @@ function draw_board_background(ctx, topleft, nrows, ncols, cellsize) {
 //
 function draw_ball(ctx, coord, color) {
     let topleft_xy = coord2xy(coord);
-    let center_x = topleft_xy[0] + Game.Geometry.BALL_RADIUS + Game.Geometry.BALL_MARGIN;
-    let center_y = topleft_xy[1] + Game.Geometry.BALL_RADIUS + Game.Geometry.BALL_MARGIN;
 
-    ctx.fillStyle = color;
+    let img = BALL_IMAGES[color];
+
+    ctx.save();
+
     ctx.beginPath();
-    ctx.arc(center_x, center_y, Game.Geometry.BALL_RADIUS, 0, Math.PI * 2, true);
+    ctx.arc(
+        topleft_xy[0] + Game.Geometry.TILE_WIDTH / 2,
+        topleft_xy[1] + Game.Geometry.TILE_WIDTH / 2,
+        Game.Geometry.BALL_RADIUS,
+        0,
+        Math.PI * 2
+    );
     ctx.closePath();
-    ctx.fill();
+    ctx.clip();
+
+    ctx.drawImage(
+        img,
+        topleft_xy[0] + Game.Geometry.BALL_MARGIN,
+        topleft_xy[1] + Game.Geometry.BALL_MARGIN,
+        Game.Geometry.TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN,
+        Game.Geometry.TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN
+    );
+
+    ctx.restore();
 }
 
 
