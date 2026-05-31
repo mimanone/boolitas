@@ -301,13 +301,21 @@ function draw_ball(ctx, coord, color) {
     ctx.closePath();
     ctx.clip();
 
-    ctx.drawImage(
-        img,
-        topleft_xy[0] + Game.Geometry.BALL_MARGIN,
-        topleft_xy[1] + Game.Geometry.BALL_MARGIN,
-        Game.Geometry.TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN,
-        Game.Geometry.TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN
-    );
+    let size = Game.Geometry.TILE_WIDTH - 2 * Game.Geometry.BALL_MARGIN;
+let x = topleft_xy[0] + Game.Geometry.BALL_MARGIN;
+let y = topleft_xy[1] + Game.Geometry.BALL_MARGIN;
+
+let ratio = Math.max(size / img.width, size / img.height);
+let newWidth = img.width * ratio;
+let newHeight = img.height * ratio;
+
+ctx.drawImage(
+    img,
+    x + (size - newWidth) / 2,
+    y + (size - newHeight) / 2,
+    newWidth,
+    newHeight
+);
 
     ctx.restore();
 }
