@@ -263,8 +263,8 @@ Game.context.restore();
 // cellsize: cell square side size in pixels
 //
 function draw_board_background(ctx, topleft, nrows, ncols, cellsize) {
-    let style1 = '#C8B99C';
-    let style2 = '#EADDC8';
+    let style1 = '#4A6FA5';
+    let style2 = '#6F9CEB';
     let even = true;
 
     for (let row = 0; row < nrows; ++row) {
