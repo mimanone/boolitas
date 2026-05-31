@@ -185,7 +185,7 @@ function is_canvas_supported() {
 
 
 function do_draw() {
-    Game.context.fillStyle = 'black';
+    Game.context.fillStyle = '#2C1A1D';
     Game.context.fillRect(0, 0, Game.Geometry.CANVAS_WIDTH, Game.Geometry.CANVAS_HEIGHT);
 
     Game.context.fillStyle = 'white';
@@ -263,8 +263,8 @@ Game.context.restore();
 // cellsize: cell square side size in pixels
 //
 function draw_board_background(ctx, topleft, nrows, ncols, cellsize) {
-    let style1 = '#4A6FA5';
-    let style2 = '#6F9CEB';
+    let style1 = '#C8B99C';
+    let style2 = '#EADDC8';
     let even = true;
 
     for (let row = 0; row < nrows; ++row) {
