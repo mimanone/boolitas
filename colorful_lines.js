@@ -190,9 +190,9 @@ function do_draw() {
 
     Game.context.fillStyle = 'white';
     Game.context.font = 'bold 22px sans-serif';
-    Game.context.fillText('Prochaines couleurs:', 660, 90);
+    Game.context.fillText('Prochaines images :', 630, 90);
 
-    Game.context.fillText('Score: ', 660, 185);
+    Game.context.fillText('Score: ', 630, 185);
     Game.context.fillText(Game.score.toString() + ' ', 800, 185);
 
     if (Game.state === Game.State.GAMEOVER) {
